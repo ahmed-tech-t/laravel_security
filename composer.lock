@@ -4,8 +4,44 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c57754c93ae34ac3b9b716a0fd2f2149",
+    "content-hash": "b65313966d5aa9a112614cfbb41331c3",
     "packages": [
+        {
+            "name": "ahmed-tech-t/laravel-starter-kit",
+            "version": "v1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ahmed-tech-t/laravel-starter-kit.git",
+                "reference": "97e17669cceb9eebed8fcd0cc26533842303d6a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ahmed-tech-t/laravel-starter-kit/zipball/97e17669cceb9eebed8fcd0cc26533842303d6a7",
+                "reference": "97e17669cceb9eebed8fcd0cc26533842303d6a7",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "AhmedTechT\\Generator\\GeneratorServiceProvider",
+                        "AhmedTechT\\Generator\\RepositoryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AhmedTechT\\Generator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Custom module generator for Laravel",
+            "support": {
+                "issues": "https://github.com/ahmed-tech-t/laravel-starter-kit/issues",
+                "source": "https://github.com/ahmed-tech-t/laravel-starter-kit/tree/v1.1.5"
+            },
+            "time": "2026-03-20T04:14:37+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.14.8",
