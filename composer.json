@@ -8,6 +8,8 @@
     "require": {
         "php": "^8.3",
         "ahmed-tech-t/laravel-starter-kit": "^1.1",
+        "ahmed-tech-t/validation-rules": "^1.1",
+        "dedoc/scramble": "^0.13.16",
         "laravel/framework": "^13.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^3.0"
