@@ -26,4 +26,12 @@ class EUserRepo extends BaseERepo implements UserRepo
             return UserMapper::modelToEntity($user, $token);
         });
     }
+
+
+    public function secureUpdatePassword(User $user, string $plainPassword)
+    {
+        $user->password = $plainPassword;
+        $user->tokens()->delete();
+        $user->save();
+    }
 }

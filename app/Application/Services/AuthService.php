@@ -2,23 +2,21 @@
 
 namespace App\Application\Services;
 
-use App\Application\DTOs\ChangePasswrodDto;
+use App\Application\DTOs\ChangePasswordDto;
 use App\Application\DTOs\LoginDto;
 use App\Application\DTOs\RegisterDto;
-use App\Application\DTOs\ResetPasswrodDtoDto;
 use App\Domain\Entities\UserEntity;
 use App\Domain\Repo\UserRepo;
-use App\Http\Requests\ResetPasswrodRequest;
 use Exception;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
-use function Symfony\Component\String\b;
 
 class AuthService
 {
-    public function __construct(private UserRepo $repo) {}
+    public function __construct(private UserRepo $repo)
+    {
+    }
 
     public function register(RegisterDto $dto)
     {
@@ -37,7 +35,7 @@ class AuthService
         throw new Exception('Invalid credentials', 401);
     }
 
-    public function changePassword(ChangePasswrodDto $dto)
+    public function changePassword(ChangePasswordDto $dto)
     {
         $userId = Auth::id();
         $user = $this->repo->findById($userId);
@@ -45,7 +43,7 @@ class AuthService
         if (!Hash::check($dto->old_password, $user->hashed_password)) {
             abort(422, 'The current password you entered is incorrect.');
         }
-        $user->password = Hash::make($dto->password);
+        $user->password = $dto->password;
         $this->repo->update($user);
         return true;
     }

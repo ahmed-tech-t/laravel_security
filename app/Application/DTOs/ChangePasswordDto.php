@@ -4,13 +4,14 @@ namespace App\Application\DTOs;
 
 
 
-class ChangePasswrodDto
+class ChangePasswordDto
 {
 
     public function __construct(
         public string $old_password,
         public string $password
-    ) {}
+    ) {
+    }
 
 
     public function toArray()
