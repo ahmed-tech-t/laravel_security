@@ -7,6 +7,7 @@ use App\Http\utils\ValidationRules;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
+use function Laravel\Prompts\confirm;
 
 class LoginRequest extends FormRequest
 {
@@ -27,7 +28,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'email' => ValidationRules::email('login'),
-            'password' => ValidationRules::password(),
+            'password' => ValidationRules::password(withConfirm: false),
         ];
     }
 

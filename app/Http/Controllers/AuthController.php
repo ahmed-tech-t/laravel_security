@@ -12,14 +12,13 @@ class AuthController extends Controller
 {
 
     use HttpResponses;
-    public function __construct(private AuthService $service)
-    {
-
-    }
+    public function __construct(private AuthService $service) {}
     public function login(LoginRequest $request)
     {
-        $data = $request->validated();
-
+        $data = $request->toDto();
+        return $this->success(
+            $this->service->login(dto: $data, deviceName: $request->header('User-Agent'))
+        );
     }
 
     public function register(RegisterRequest $request)
@@ -29,6 +28,20 @@ class AuthController extends Controller
         return $this->success(
             UserResource::make($result),
             'User registered successfully'
+        );
+    }
+
+    public function logout()
+    {
+        return $this->success(
+            $this->service->logout()
+        );
+    }
+
+    public function logoutAll()
+    {
+        return $this->success(
+            $this->service->logoutAll()
         );
     }
 }

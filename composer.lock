@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "ahmed-tech-t/laravel-starter-kit",
-            "version": "v1.1.5",
+            "version": "v1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ahmed-tech-t/laravel-starter-kit.git",
-                "reference": "97e17669cceb9eebed8fcd0cc26533842303d6a7"
+                "reference": "108c5b0e044e10ff864651839b275aabda0cbd74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ahmed-tech-t/laravel-starter-kit/zipball/97e17669cceb9eebed8fcd0cc26533842303d6a7",
-                "reference": "97e17669cceb9eebed8fcd0cc26533842303d6a7",
+                "url": "https://api.github.com/repos/ahmed-tech-t/laravel-starter-kit/zipball/108c5b0e044e10ff864651839b275aabda0cbd74",
+                "reference": "108c5b0e044e10ff864651839b275aabda0cbd74",
                 "shasum": ""
             },
             "type": "library",
@@ -38,9 +38,9 @@
             "description": "Custom module generator for Laravel",
             "support": {
                 "issues": "https://github.com/ahmed-tech-t/laravel-starter-kit/issues",
-                "source": "https://github.com/ahmed-tech-t/laravel-starter-kit/tree/v1.1.5"
+                "source": "https://github.com/ahmed-tech-t/laravel-starter-kit/tree/v1.1.7"
             },
-            "time": "2026-03-20T04:14:37+00:00"
+            "time": "2026-03-23T07:18:38+00:00"
         },
         {
             "name": "ahmed-tech-t/validation-rules",
@@ -8479,12 +8479,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.3"
     },
-    "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
 }
