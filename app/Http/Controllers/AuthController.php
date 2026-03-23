@@ -7,6 +7,7 @@ use App\Application\Services\AuthService;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\UserResource;
+use App\Http\Requests\ChangePasswrodRequest;
 
 class AuthController extends Controller
 {
@@ -42,6 +43,14 @@ class AuthController extends Controller
     {
         return $this->success(
             $this->service->logoutAll()
+        );
+    }
+
+    public function changePassword(ChangePasswrodRequest $request)
+    {
+        return $this->success(
+            $this->service->changePassword($request->toDto()),
+            'Password changed successfully'
         );
     }
 }

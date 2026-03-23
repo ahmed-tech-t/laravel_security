@@ -13,6 +13,7 @@ class UserMapper implements BaseMapper
             id: $model->id,
             name: $model->name,
             email: $model->email,
+            hashed_password: $model->password,
             token: $token,
             created_at: $model->created_at,
             updated_at: $model->updated_at,

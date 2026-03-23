@@ -8,17 +8,17 @@ use Carbon\Carbon;
 class UserEntity
 {
 
+
     public function __construct(
         public string $name,
         public string $email,
         public ?int $id = null,
+        public ?string $hashed_password = null,
         public ?string $token = null,
         public ?string $password = null,
         public ?Carbon $created_at = null,
         public ?Carbon $updated_at = null,
-    ) {
-
-    }
+    ) {}
 
     public static function create(array $data)
     {
