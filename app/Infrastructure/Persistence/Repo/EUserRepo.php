@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Infrastructure\Persistence\Repo;
+
 use AhmedTechT\Generator\Base\EloquentRepoImpl\BaseERepo;
 use App\Application\Mappers\UserMapper;
 use App\Domain\Repo\UserRepo;
@@ -31,7 +33,6 @@ class EUserRepo extends BaseERepo implements UserRepo
     public function secureUpdatePassword(User $user, string $plainPassword)
     {
         $user->password = $plainPassword;
-        $user->tokens()->delete();
         $user->save();
     }
 }

@@ -9,12 +9,11 @@ use App\Domain\Entities\PasswordResetEntity;
 use App\Domain\Repo\PasswordResetRepo;
 use App\Domain\Repo\UserRepo;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Auth\Events\PasswordReset;
 
 class PasswordResetService
 {
-    public function __construct(private UserRepo $userRepo)
-    {
-    }
+    public function __construct(private UserRepo $userRepo) {}
     public function sendResetLink(SendResetLinkDto $dto)
     {
         return Password::sendResetLink($dto->toArray());
@@ -26,6 +25,7 @@ class PasswordResetService
             $dto->toArray(),
             function ($user, $password) {
                 $this->userRepo->secureUpdatePassword($user, $password);
+                event(new PasswordReset($user));
             }
         );
     }
